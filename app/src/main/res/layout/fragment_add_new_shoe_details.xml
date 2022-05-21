@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layout is used to implement data binding to enter data and bind the
+edittexts to the corresponding data in the view model-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ShoeDetailFragment">
+
+<data>
+    <variable
+        name="activityShoeModel"
+        type="com.udacity.shoestore.ActivityViewModel"/>
+</data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_text" />
+
+    <EditText
+        android:id="@+id/name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={activityShoeModel.newName}"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/size_text" />
+
+    <EditText
+        android:id="@+id/size_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={activityShoeModel.newSize}"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/company_text" />
+
+    <EditText
+        android:id="@+id/company_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={activityShoeModel.newCompany}"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_text" />
+
+    <EditText
+        android:id="@+id/description_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text="@={activityShoeModel.newDescription}"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:layout_margin="16dp"
+        app:maxImageSize="60dp"
+        app:backgroundTint="@color/colorAccent"
+        android:src="@drawable/outline_add_black_18"
+        />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="@string/cancel_text"
+        />
+
+</LinearLayout>
+
+</layout>

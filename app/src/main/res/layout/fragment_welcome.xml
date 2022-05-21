@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layout is used to  implement data binding in the welcome fragment kotlin file-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="activityShoeModel"
+            type="com.udacity.shoestore.ActivityViewModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/welcome_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".WelcomeFragment">
+
+        <TextView
+            android:id="@+id/welcome_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="@string/welcome_message"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_text_in_welcome_screen"
+            android:textSize="20sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/welcome_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:src="@drawable/outline_navigate_next_black_24"
+            app:backgroundTint="@color/colorAccent"
+            app:maxImageSize="60dp" />
+
+    </LinearLayout>
+
+</layout>
+
+

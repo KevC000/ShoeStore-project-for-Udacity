@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layout is needed to be used in order to implement data binding in the
+shoe listing file. Databinding is needed to display the data in the form of
+a string from the view model which needs to be updated whenever a new shoe is added.
+-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ShoeListingFragment">
+
+    <data>
+        <variable
+            name="activityShoeModel"
+            type="com.udacity.shoestore.ActivityViewModel"/>
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_of_shoes_text"
+        android:textSize="40sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/barLine"
+        />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/shoe_item_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/shoes_listing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{activityShoeModel.listOfShoesDisplay}"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/listing_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/outline_navigate_next_black_24"
+        app:backgroundTint="@color/colorAccent"
+        app:maxImageSize="60dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</LinearLayout>
+
+</layout>
